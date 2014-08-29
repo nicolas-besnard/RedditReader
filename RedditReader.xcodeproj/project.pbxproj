@@ -24,6 +24,7 @@
 		37C3EFA919B09C5D00F54544 /* ControllerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C3EFA819B09C5D00F54544 /* ControllerBase.swift */; };
 		37C3EFAB19B09C9200F54544 /* SubCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C3EFAA19B09C9200F54544 /* SubCollectionController.swift */; };
 		37C3EFAD19B0A53A00F54544 /* SubServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C3EFAC19B0A53A00F54544 /* SubServiceProtocol.swift */; };
+		37C3EFB119B0AC7B00F54544 /* MainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C3EFB019B0AC7B00F54544 /* MainTableViewCell.swift */; };
 		6F739B5CECB040DAB53EA572 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 025275813F62408B854549BD /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		37C3EFA819B09C5D00F54544 /* ControllerBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControllerBase.swift; sourceTree = "<group>"; };
 		37C3EFAA19B09C9200F54544 /* SubCollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCollectionController.swift; sourceTree = "<group>"; };
 		37C3EFAC19B0A53A00F54544 /* SubServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubServiceProtocol.swift; sourceTree = "<group>"; };
+		37C3EFB019B0AC7B00F54544 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
 		FA91725394654AC5B975DB94 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,6 +170,7 @@
 		3755656619B079E800C67678 /* RedditReader */ = {
 			isa = PBXGroup;
 			children = (
+				37C3EFAE19B0AC2300F54544 /* Views */,
 				37024BF219B085E8005AC32E /* Extensions */,
 				37024BEB19B08419005AC32E /* Collection */,
 				37024BE619B08229005AC32E /* Utils */,
@@ -215,6 +218,14 @@
 				3755656B19B079E800C67678 /* RootViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		37C3EFAE19B0AC2300F54544 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				37C3EFB019B0AC7B00F54544 /* MainTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +366,7 @@
 				37C3EFA319B08B1400F54544 /* SubService.swift in Sources */,
 				37024BEF19B08453005AC32E /* SubCollection.swift in Sources */,
 				37C3EFA919B09C5D00F54544 /* ControllerBase.swift in Sources */,
+				37C3EFB119B0AC7B00F54544 /* MainTableViewCell.swift in Sources */,
 				37024BE819B0823E005AC32E /* SwiftyJSON.swift in Sources */,
 				37024BF119B084FB005AC32E /* Sub.swift in Sources */,
 				37C3EFAD19B0A53A00F54544 /* SubServiceProtocol.swift in Sources */,

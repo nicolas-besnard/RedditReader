@@ -8,16 +8,20 @@
 
 import UIKit
 
-class RootViewController: UIViewController
+class RootViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
     var subCollection: SubCollection!
+    
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        subCollection = context().subs
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
 
+        
         setupObserver()
         NSNotificationCenter.defaultCenter().postRetrieveSubNotificationFor("leagueoflegends")
     }
@@ -36,12 +40,33 @@ class RootViewController: UIViewController
     {
         if keyPath == "collection"
         {
-            println("DATA HAS CHANGE")
+            println("DATA HAS CHANGE \(self.subCollection.collection.count)")
+            self.tableView.reloadData()
         }
         else
         {
             super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
         }
+    }
+    
+    // Table View
+    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
+    {
+        println(indexPath.row)
+        var cell = tableView.dequeueReusableCellWithIdentifier(MainTableCellId) as? MainTableViewCell
+        cell!.sub = self.subCollection.collection[indexPath.row]
+        return cell
+    }
+
+    
+    func numberOfSectionsInTableView(tableView: UITableView!) -> Int
+    {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int
+    {
+        return self.subCollection.collection.count
     }
 }
 
