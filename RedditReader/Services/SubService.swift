@@ -38,6 +38,7 @@ class SubService: ServiceBase, SubServiceProtocol
                     newSub.createdAt = subData["created_utc"].double
                     newSub.sub = subData["subreddit"].string
                     newSub.nbComments = subData["num_comments"].integer
+                    newSub.author = subData["author"].string
                     
                     if let thumbnail = subData["thumbnail"].string
                     {

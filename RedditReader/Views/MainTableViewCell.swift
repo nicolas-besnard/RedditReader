@@ -15,6 +15,7 @@ class MainTableViewCell: UITableViewCell
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var thumbnailView: UIImageView!
     @IBOutlet weak var nbCommentsLabel: UILabel!
+    @IBOutlet weak var sinceLabel: UILabel!
     
     var sub: Sub!
     {
@@ -22,6 +23,8 @@ class MainTableViewCell: UITableViewCell
         {
             titleLabel.text = sub.title
             nbCommentsLabel.text = String(sub.nbComments)
+            sinceLabel.text = NSDate(timeIntervalSince1970: sub.createdAt).timeAgoSinceNow()
+            
             if let thumbnail = sub.thumbnail
             {
                 let url = NSURL(string: thumbnail)

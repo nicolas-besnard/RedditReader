@@ -20,6 +20,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+//        self.tableView.rowHeight = UITableViewAutomaticDimension
         
         subCollection = context().subs
         

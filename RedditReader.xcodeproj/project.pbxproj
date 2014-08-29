@@ -63,6 +63,7 @@
 		37C3EFAA19B09C9200F54544 /* SubCollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCollectionController.swift; sourceTree = "<group>"; };
 		37C3EFAC19B0A53A00F54544 /* SubServiceProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubServiceProtocol.swift; sourceTree = "<group>"; };
 		37C3EFB019B0AC7B00F54544 /* MainTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewCell.swift; sourceTree = "<group>"; };
+		37E063C119B0D1C000FEAD40 /* sandbox.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = sandbox.playground; sourceTree = "<group>"; };
 		FA91725394654AC5B975DB94 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,6 +184,7 @@
 				3755657019B079E800C67678 /* Images.xcassets */,
 				3755656719B079E800C67678 /* Supporting Files */,
 				370E086A19B07E500028F7B6 /* RedditReader-Bridging-Header.h */,
+				37E063C119B0D1C000FEAD40 /* sandbox.playground */,
 			);
 			path = RedditReader;
 			sourceTree = "<group>";
