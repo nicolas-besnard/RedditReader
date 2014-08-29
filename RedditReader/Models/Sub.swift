@@ -19,6 +19,7 @@ class Sub
     var permalink: String!
     var createdAt: NSNumber!
     var sub: String!
+    var nbComments: Int!
     
     init()
     {}

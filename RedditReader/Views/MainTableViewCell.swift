@@ -14,13 +14,14 @@ class MainTableViewCell: UITableViewCell
 {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var thumbnailView: UIImageView!
+    @IBOutlet weak var nbCommentsLabel: UILabel!
     
     var sub: Sub!
     {
         didSet
         {
             titleLabel.text = sub.title
-            
+            nbCommentsLabel.text = String(sub.nbComments)
             if let thumbnail = sub.thumbnail
             {
                 let url = NSURL(string: thumbnail)

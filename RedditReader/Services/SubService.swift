@@ -37,12 +37,12 @@ class SubService: ServiceBase, SubServiceProtocol
                     newSub.permalink = subData["permalink"].string
                     newSub.createdAt = subData["created_utc"].double
                     newSub.sub = subData["subreddit"].string
+                    newSub.nbComments = subData["num_comments"].integer
                     
                     if let thumbnail = subData["thumbnail"].string
                     {
                         newSub.thumbnail = thumbnail
                     }
-                    
                     subs += [newSub]
                 }
                 
