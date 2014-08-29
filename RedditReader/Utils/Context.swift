@@ -10,5 +10,18 @@ import Foundation
 
 class Context
 {
+    // Collections
+    var subs = SubCollection()
     
+    // Services
+//    var subService = SubService()
+    var subService = MockSubService()
+    
+    // Controllers
+    var subCollectionController = SubCollectionController()
+    
+    func setup()
+    {
+        subCollectionController.setup()
+    }
 }

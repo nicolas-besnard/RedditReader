@@ -1,5 +1,5 @@
 //
-//  SubCollection.swift
+//  SubServiceProtocole.swift
 //  RedditReader
 //
 //  Created by Nicolas Besnard on 29/08/2014.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Subs
+protocol SubServiceProtocol
 {
-    var collection: [Sub] = []
+    func get(subName: String, completionBlock: SubServiceCompletionBlock)
 }

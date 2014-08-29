@@ -13,9 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate
 {
     var window: UIWindow?
     var context = Context()
-
-    func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
-        // Override point for customization after application launch.
+    
+    func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool
+    {
+        context.setup()
         return true
     }
 

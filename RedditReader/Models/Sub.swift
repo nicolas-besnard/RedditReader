@@ -15,4 +15,7 @@ class Sub
     var author: String!
     var subId: String!
     var url: String!
+    
+    init()
+    {}
 }
