@@ -20,7 +20,8 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-
+        
+        subCollection = context().subs
         
         setupObserver()
         NSNotificationCenter.defaultCenter().postRetrieveSubNotificationFor("leagueoflegends")
