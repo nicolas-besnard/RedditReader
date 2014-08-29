@@ -13,12 +13,21 @@ let MainTableCellId = "mainTableCellId"
 class MainTableViewCell: UITableViewCell
 {
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var thumbnailView: UIImageView!
     
     var sub: Sub!
     {
         didSet
         {
             titleLabel.text = sub.title
+            
+            if let thumbnail = sub.thumbnail
+            {
+                let url = NSURL(string: thumbnail)
+                let data = NSData(contentsOfURL: url)
+
+                thumbnailView.image = UIImage(data: data)
+            }
         }
     }
     

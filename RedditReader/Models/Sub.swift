@@ -15,6 +15,10 @@ class Sub
     var author: String!
     var subId: String!
     var url: String!
+    var thumbnail: String!
+    var permalink: String!
+    var createdAt: NSNumber!
+    var sub: String!
     
     init()
     {}
