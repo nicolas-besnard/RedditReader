@@ -7,8 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37024BE319B08052005AC32E /* SubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37024BE219B08052005AC32E /* SubService.swift */; };
+		37024BE519B08124005AC32E /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37024BE419B08124005AC32E /* Service.swift */; };
+		37024BE819B0823E005AC32E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37024BE719B0823E005AC32E /* SwiftyJSON.swift */; };
+		37024BEF19B08453005AC32E /* Subs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37024BEE19B08453005AC32E /* Subs.swift */; };
+		37024BF119B084FB005AC32E /* Sub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37024BF019B084FB005AC32E /* Sub.swift */; };
 		3755656A19B079E800C67678 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3755656919B079E800C67678 /* AppDelegate.swift */; };
-		3755656C19B079E800C67678 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3755656B19B079E800C67678 /* ViewController.swift */; };
+		3755656C19B079E800C67678 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3755656B19B079E800C67678 /* RootViewController.swift */; };
 		3755656F19B079E800C67678 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3755656D19B079E800C67678 /* Main.storyboard */; };
 		3755657119B079E800C67678 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3755657019B079E800C67678 /* Images.xcassets */; };
 		3755657D19B079E800C67678 /* RedditReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3755657C19B079E800C67678 /* RedditReaderTests.swift */; };
@@ -27,11 +32,16 @@
 
 /* Begin PBXFileReference section */
 		025275813F62408B854549BD /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		37024BE219B08052005AC32E /* SubService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubService.swift; path = ../../../../../SubService.swift; sourceTree = "<group>"; };
+		37024BE419B08124005AC32E /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Service.swift; path = ../../../../../Service.swift; sourceTree = "<group>"; };
+		37024BE719B0823E005AC32E /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		37024BEE19B08453005AC32E /* Subs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subs.swift; sourceTree = "<group>"; };
+		37024BF019B084FB005AC32E /* Sub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sub.swift; sourceTree = "<group>"; };
 		370E086A19B07E500028F7B6 /* RedditReader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RedditReader-Bridging-Header.h"; sourceTree = "<group>"; };
 		3755656419B079E800C67678 /* RedditReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3755656819B079E800C67678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3755656919B079E800C67678 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3755656B19B079E800C67678 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3755656B19B079E800C67678 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		3755656E19B079E800C67678 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3755657019B079E800C67678 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3755657619B079E800C67678 /* RedditReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedditReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +77,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		37024BE619B08229005AC32E /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				37024BE719B0823E005AC32E /* SwiftyJSON.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		37024BEB19B08419005AC32E /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				37024BEE19B08453005AC32E /* Subs.swift */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
 		370E086419B07D1F0028F7B6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +103,7 @@
 		370E086519B07D2C0028F7B6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				37024BF019B084FB005AC32E /* Sub.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -84,6 +111,8 @@
 		370E086719B07D5D0028F7B6 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				37024BE219B08052005AC32E /* SubService.swift */,
+				37024BE419B08124005AC32E /* Service.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -111,6 +140,8 @@
 		3755656619B079E800C67678 /* RedditReader */ = {
 			isa = PBXGroup;
 			children = (
+				37024BEB19B08419005AC32E /* Collection */,
+				37024BE619B08229005AC32E /* Utils */,
 				370E086719B07D5D0028F7B6 /* Services */,
 				370E086519B07D2C0028F7B6 /* Models */,
 				370E086419B07D1F0028F7B6 /* Controllers */,
@@ -152,7 +183,7 @@
 		3755658719B07A6700C67678 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				3755656B19B079E800C67678 /* ViewController.swift */,
+				3755656B19B079E800C67678 /* RootViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -291,7 +322,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3755656C19B079E800C67678 /* ViewController.swift in Sources */,
+				3755656C19B079E800C67678 /* RootViewController.swift in Sources */,
+				37024BE519B08124005AC32E /* Service.swift in Sources */,
+				37024BEF19B08453005AC32E /* Subs.swift in Sources */,
+				37024BE319B08052005AC32E /* SubService.swift in Sources */,
+				37024BE819B0823E005AC32E /* SwiftyJSON.swift in Sources */,
+				37024BF119B084FB005AC32E /* Sub.swift in Sources */,
 				3755656A19B079E800C67678 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
