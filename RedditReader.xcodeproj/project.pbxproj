@@ -12,6 +12,8 @@
 		37024BE819B0823E005AC32E /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37024BE719B0823E005AC32E /* SwiftyJSON.swift */; };
 		37024BEF19B08453005AC32E /* Subs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37024BEE19B08453005AC32E /* Subs.swift */; };
 		37024BF119B084FB005AC32E /* Sub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37024BF019B084FB005AC32E /* Sub.swift */; };
+		37024BF419B08602005AC32E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37024BF319B08602005AC32E /* UIViewController.swift */; };
+		37024BF619B0861A005AC32E /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37024BF519B0861A005AC32E /* Context.swift */; };
 		3755656A19B079E800C67678 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3755656919B079E800C67678 /* AppDelegate.swift */; };
 		3755656C19B079E800C67678 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3755656B19B079E800C67678 /* RootViewController.swift */; };
 		3755656F19B079E800C67678 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3755656D19B079E800C67678 /* Main.storyboard */; };
@@ -37,6 +39,8 @@
 		37024BE719B0823E005AC32E /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		37024BEE19B08453005AC32E /* Subs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subs.swift; sourceTree = "<group>"; };
 		37024BF019B084FB005AC32E /* Sub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sub.swift; sourceTree = "<group>"; };
+		37024BF319B08602005AC32E /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		37024BF519B0861A005AC32E /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		370E086A19B07E500028F7B6 /* RedditReader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RedditReader-Bridging-Header.h"; sourceTree = "<group>"; };
 		3755656419B079E800C67678 /* RedditReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3755656819B079E800C67678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,6 +85,7 @@
 			isa = PBXGroup;
 			children = (
 				37024BE719B0823E005AC32E /* SwiftyJSON.swift */,
+				37024BF519B0861A005AC32E /* Context.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -91,6 +96,14 @@
 				37024BEE19B08453005AC32E /* Subs.swift */,
 			);
 			path = Collection;
+			sourceTree = "<group>";
+		};
+		37024BF219B085E8005AC32E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				37024BF319B08602005AC32E /* UIViewController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		370E086419B07D1F0028F7B6 /* Controllers */ = {
@@ -140,6 +153,7 @@
 		3755656619B079E800C67678 /* RedditReader */ = {
 			isa = PBXGroup;
 			children = (
+				37024BF219B085E8005AC32E /* Extensions */,
 				37024BEB19B08419005AC32E /* Collection */,
 				37024BE619B08229005AC32E /* Utils */,
 				370E086719B07D5D0028F7B6 /* Services */,
@@ -328,6 +342,8 @@
 				37024BE319B08052005AC32E /* SubService.swift in Sources */,
 				37024BE819B0823E005AC32E /* SwiftyJSON.swift in Sources */,
 				37024BF119B084FB005AC32E /* Sub.swift in Sources */,
+				37024BF619B0861A005AC32E /* Context.swift in Sources */,
+				37024BF419B08602005AC32E /* UIViewController.swift in Sources */,
 				3755656A19B079E800C67678 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
