@@ -17,6 +17,7 @@ class MainTableViewCell: UITableViewCell
     @IBOutlet weak var nbCommentsLabel: UILabel!
     @IBOutlet weak var sinceLabel: UILabel!
     
+    @IBOutlet weak var titleMarginConstrain: NSLayoutConstraint!
     var sub: Sub!
     {
         didSet
@@ -24,7 +25,7 @@ class MainTableViewCell: UITableViewCell
             titleLabel.text = sub.title
             nbCommentsLabel.text = String(sub.nbComments)
             sinceLabel.text = NSDate(timeIntervalSince1970: sub.createdAt).timeAgoSinceNow()
-            
+
             if let thumbnail = sub.thumbnail
             {
                 let url = NSURL(string: thumbnail)
@@ -33,6 +34,13 @@ class MainTableViewCell: UITableViewCell
                 thumbnailView.image = UIImage(data: data)
             }
         }
+    }
+    
+    override func layoutSubviews()
+    {
+        super.layoutSubviews()
+            
+        titleLabel.preferredMaxLayoutWidth = 5
     }
     
     override func awakeFromNib()
