@@ -71,6 +71,33 @@
             </objects>
             <point key="canvasLocation" x="975" y="-402"/>
         </scene>
+        <!--Web View Controller-->
+        <scene sceneID="CbD-TK-xbH">
+            <objects>
+                <viewController id="jE5-Kv-G2v" customClass="WebViewController" customModule="RedditReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dwO-Bf-xXS"/>
+                        <viewControllerLayoutGuide type="bottom" id="2wO-mB-obR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sye-C9-ZVU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N0l-OA-Q5D">
+                                <rect key="frame" x="0.0" y="-146" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="N0l-OA-Q5D" id="NNb-Hm-rHo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="v6s-JV-HwO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="975" y="266"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="tL6-lQ-2Yh">
             <objects>

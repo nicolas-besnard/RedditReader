@@ -13,6 +13,7 @@
 		37024BF419B08602005AC32E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37024BF319B08602005AC32E /* UIViewController.swift */; };
 		37024BF619B0861A005AC32E /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37024BF519B0861A005AC32E /* Context.swift */; };
 		37024BFA19B08958005AC32E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37024BF919B08958005AC32E /* Notification.swift */; };
+		370956A619B5F12900A1C0A7 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370956A519B5F12900A1C0A7 /* WebViewController.swift */; };
 		3755656A19B079E800C67678 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3755656919B079E800C67678 /* AppDelegate.swift */; };
 		3755656C19B079E800C67678 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3755656B19B079E800C67678 /* RootViewController.swift */; };
 		3755656F19B079E800C67678 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3755656D19B079E800C67678 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		37024BF319B08602005AC32E /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		37024BF519B0861A005AC32E /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		37024BF919B08958005AC32E /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		370956A519B5F12900A1C0A7 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		370E086A19B07E500028F7B6 /* RedditReader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RedditReader-Bridging-Header.h"; sourceTree = "<group>"; };
 		3755656419B079E800C67678 /* RedditReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3755656819B079E800C67678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -218,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				3755656B19B079E800C67678 /* RootViewController.swift */,
+				370956A519B5F12900A1C0A7 /* WebViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				37C3EFA719B08D6600F54544 /* MockSubService.swift in Sources */,
 				37C3EFAB19B09C9200F54544 /* SubCollectionController.swift in Sources */,
 				3755656A19B079E800C67678 /* AppDelegate.swift in Sources */,
+				370956A619B5F12900A1C0A7 /* WebViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
