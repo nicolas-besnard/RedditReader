@@ -52,19 +52,17 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     // Table View
-    func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell!
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        var cell = tableView.dequeueReusableCellWithIdentifier(MainTableCellId) as? MainTableViewCell
-        cell!.sub = self.subCollection.collection[indexPath.row]
-        
-//        NSString *text = [arrayofdata objectAtIndex:indexPath.row];
-//        CGSize constraint = CGSizeMake(tableView.frame.size.width - (CELL_CONTENT_MARGIN * 2), 20000.0f);
-//        CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:FONT_SIZE] constrainedToSize:constraint lineBreakMode:NSLineBreakByWordWrapping];
-//        [cell.Content_Text setText:text];
-//        cell.Content_Text setFrame:CGRectMake(CELL_CONTENT_MARGIN, CELL_CONTENT_MARGIN+cell.Content_Email.frame.origin.y+cell.Content_Email.frame.size.height, tableView.frame.size.width - (CELL_CONTENT_MARGIN * 2), MAX(size.height,20.0f))];
-        
-        
+        var cell = tableView.dequeueReusableCellWithIdentifier(MainTableCellId) as MainTableViewCell
+        cell.sub = self.subCollection.collection[indexPath.row]
+    
         return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        return 200
     }
 
     
@@ -73,7 +71,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         return 1
     }
     
-    func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return self.subCollection.collection.count
     }

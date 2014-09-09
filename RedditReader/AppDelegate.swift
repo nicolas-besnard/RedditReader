@@ -17,8 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool
     {
         context.setup()
-//        println([UIScreen mainScreen].bounds.size.width)
-        println(UIScreen.mainScreen().bounds.size.width)
+
         return true
     }
 

@@ -14,17 +14,14 @@ class MainTableViewCell: UITableViewCell
 {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var thumbnailView: UIImageView!
-    @IBOutlet weak var nbCommentsLabel: UILabel!
-    @IBOutlet weak var sinceLabel: UILabel!
     
-    @IBOutlet weak var titleMarginConstrain: NSLayoutConstraint!
     var sub: Sub!
     {
         didSet
         {
             titleLabel.text = sub.title
-            nbCommentsLabel.text = String(sub.nbComments)
-            sinceLabel.text = NSDate(timeIntervalSince1970: sub.createdAt).timeAgoSinceNow()
+//            nbCommentsLabel.text = String(sub.nbComments)
+//            sinceLabel.text = NSDate(timeIntervalSince1970: sub.createdAt).timeAgoSinceNow()
 
             if let thumbnail = sub.thumbnail
             {
@@ -35,14 +32,7 @@ class MainTableViewCell: UITableViewCell
             }
         }
     }
-    
-    override func layoutSubviews()
-    {
-        super.layoutSubviews()
-            
-        titleLabel.preferredMaxLayoutWidth = 5
-    }
-    
+        
     override func awakeFromNib()
     {
         super.awakeFromNib()
