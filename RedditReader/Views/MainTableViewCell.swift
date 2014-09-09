@@ -10,6 +10,11 @@ import UIKit
 
 let MainTableCellId = "mainTableCellId"
 
+let NewsCellTitleMarginConstant: CGFloat = 0.0
+let NewsCellTitleFontSize: CGFloat = 15.0
+let NewsCellTitleDefaultHeight: CGFloat =  25.0
+let NewsCellHeight: CGFloat = 100.0
+
 class MainTableViewCell: UITableViewCell
 {
     @IBOutlet weak var titleLabel: UILabel!
@@ -32,7 +37,16 @@ class MainTableViewCell: UITableViewCell
             }
         }
     }
-        
+    
+    class func heightForText(text: NSString, bounds: CGRect) -> CGFloat
+    {
+        var size = text.boundingRectWithSize(CGSizeMake(CGRectGetWidth(bounds) - (NewsCellTitleMarginConstant * 2), CGFloat.max),
+            options: NSStringDrawingOptions.UsesLineFragmentOrigin,
+            attributes: [NSFontAttributeName: UIFont.systemFontOfSize(NewsCellTitleFontSize)],
+            context: nil)
+        return size.height > NewsCellTitleDefaultHeight ? NewsCellHeight + size.height - NewsCellTitleDefaultHeight : NewsCellHeight
+    }
+    
     override func awakeFromNib()
     {
         super.awakeFromNib()

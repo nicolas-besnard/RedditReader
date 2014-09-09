@@ -62,7 +62,8 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
-        return 200
+        let text = self.subCollection.collection[indexPath.row].title
+        return MainTableViewCell.heightForText(text, bounds: tableView.bounds)
     }
 
     
