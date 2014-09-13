@@ -12,9 +12,14 @@ class WebViewController: UIViewController, UIWebViewDelegate
 {
     @IBOutlet weak var webView: UIWebView!
     
+    var sub: Sub!
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
+        let url = NSURL(string: sub.url)
+        self.webView.loadRequest(NSURLRequest(URL: url))
     }
 
     override func didReceiveMemoryWarning()

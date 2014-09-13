@@ -65,6 +65,21 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         let text = self.subCollection.collection[indexPath.row].title
         return MainTableViewCell.heightForText(text, bounds: tableView.bounds)
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        let selectedSub = self.subCollection.collection[indexPath.row]
+        if selectedSub.url.contains("www.reddit.com")
+        {
+            println("OPEN SUB IN APP")
+        }
+        else
+        {
+            let web = context().getWebViewController()
+            web.sub = selectedSub
+            self.navigationController?.pushViewController(web, animated: true)
+        }
+    }
 
     
     func numberOfSectionsInTableView(tableView: UITableView!) -> Int

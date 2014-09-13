@@ -19,6 +19,7 @@
 		3755656F19B079E800C67678 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3755656D19B079E800C67678 /* Main.storyboard */; };
 		3755657119B079E800C67678 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3755657019B079E800C67678 /* Images.xcassets */; };
 		3755657D19B079E800C67678 /* RedditReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3755657C19B079E800C67678 /* RedditReaderTests.swift */; };
+		37A5B49E19C4F82E00E193EC /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5B49D19C4F82E00E193EC /* String.swift */; };
 		37C3EFA319B08B1400F54544 /* SubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C3EFA219B08B1400F54544 /* SubService.swift */; };
 		37C3EFA519B08B2400F54544 /* ServiceBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C3EFA419B08B2400F54544 /* ServiceBase.swift */; };
 		37C3EFA719B08D6600F54544 /* MockSubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C3EFA619B08D6600F54544 /* MockSubService.swift */; };
@@ -58,6 +59,7 @@
 		3755657619B079E800C67678 /* RedditReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedditReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3755657B19B079E800C67678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3755657C19B079E800C67678 /* RedditReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditReaderTests.swift; sourceTree = "<group>"; };
+		37A5B49D19C4F82E00E193EC /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		37C3EFA219B08B1400F54544 /* SubService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubService.swift; sourceTree = "<group>"; };
 		37C3EFA419B08B2400F54544 /* ServiceBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceBase.swift; sourceTree = "<group>"; };
 		37C3EFA619B08D6600F54544 /* MockSubService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSubService.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				37024BF319B08602005AC32E /* UIViewController.swift */,
+				37A5B49D19C4F82E00E193EC /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -381,6 +384,7 @@
 				37024BF419B08602005AC32E /* UIViewController.swift in Sources */,
 				37C3EFA719B08D6600F54544 /* MockSubService.swift in Sources */,
 				37C3EFAB19B09C9200F54544 /* SubCollectionController.swift in Sources */,
+				37A5B49E19C4F82E00E193EC /* String.swift in Sources */,
 				3755656A19B079E800C67678 /* AppDelegate.swift in Sources */,
 				370956A619B5F12900A1C0A7 /* WebViewController.swift in Sources */,
 			);

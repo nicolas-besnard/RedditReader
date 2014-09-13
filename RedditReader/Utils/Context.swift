@@ -24,4 +24,10 @@ class Context
     {
         subCollectionController.setup()
     }
+    
+    func getWebViewController() -> WebViewController
+    {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        return storyboard.instantiateViewControllerWithIdentifier("WebViewController") as WebViewController
+    }
 }
