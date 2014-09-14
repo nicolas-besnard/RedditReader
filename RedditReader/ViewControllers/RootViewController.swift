@@ -70,22 +70,10 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         popoverVC.modalPresentationStyle = .Popover
         let popoverController = popoverVC.popoverPresentationController
         if let popoverController = popoverVC.popoverPresentationController {
-//            popoverController.sourceView = self.navigationItem.rightBarButtonItem!
-//            popoverController.sourceRect = sender.bounds
             popoverController.permittedArrowDirections = .Any
             popoverController.delegate = self
         }
         presentViewController(popoverVC, animated: true, completion: nil)
-//        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("ChoseSubsViewController") as ChoseSubsViewController
-////        self.navigationController?.pushViewController(viewController, animated: true)
-//
-//        var navCategories = self.storyboard?.instantiateViewControllerWithIdentifier("ChoseSubsViewController") as ChoseSubsViewController
-//        var categoriesVC = navCategories
-//
-//        var popController = UIPopoverController(contentViewController: navCategories)
-//        popController.presentPopoverFromBarButtonItem(self.navigationItem.rightBarButtonItem!,
-//                    permittedArrowDirections: UIPopoverArrowDirection.Any,
-//                    animated: true)
     }
     
     private func setupNavigationItems() {
@@ -116,7 +104,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    // Table View
+    // MARK: - TableView
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         var cell = tableView.dequeueReusableCellWithIdentifier(MainTableCellId) as MainTableViewCell
@@ -149,7 +137,6 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
 
-    
     func numberOfSectionsInTableView(tableView: UITableView!) -> Int
     {
         return 1
@@ -160,4 +147,3 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         return self.subCollection.collection.count
     }
 }
-
