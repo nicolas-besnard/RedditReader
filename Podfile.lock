@@ -21,13 +21,16 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - DateTools (1.3.0)
+  - MMMarkdown (0.3)
 
 DEPENDENCIES:
   - AFNetworking
   - DateTools
+  - MMMarkdown
 
 SPEC CHECKSUMS:
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
   DateTools: aa3131160337433a152c0228a2a1be2ff4ed3e05
+  MMMarkdown: 95af8920c647512d1efa2ac8ac1932baf3266e2c
 
 COCOAPODS: 0.33.1
