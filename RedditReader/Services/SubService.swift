@@ -42,10 +42,16 @@ class SubService: ServiceBase, SubServiceProtocol
                     newSub.author = subData["author"].string
                     newSub.text = subData["selftext"].string
                     
+                    newSub.thumbnail = "http://a.thumbs.redditmedia.com/ailURefhvi5BnEOZ.png"
+                    
                     if let thumbnail = subData["thumbnail"].string
                     {
-                        newSub.thumbnail = thumbnail
+                        if thumbnail != "self"
+                        {
+                            newSub.thumbnail = thumbnail
+                        }
                     }
+                    
                     subs += [newSub]
                 }
                 
