@@ -10,15 +10,16 @@ import Foundation
 
 class SubService: ServiceBase, SubServiceProtocol
 {
-    func get(subName: String, completionBlock: SubServiceCompletionBlock)
+    func get(subName: String, count: Int, afterId: String, completionBlock: SubServiceCompletionBlock)
     {
-        let subEndpoint = self.endpoint + "/r/" + subName + ".json"
-//        let subEndpoint = self.endpoint + "/.json"
+        let subEndpoint = self.endpoint + "/r/" + subName + ".json?count=\(count)&after=\(afterId)"
+        
+        println("ENDPOINT - \(subEndpoint)")
         manager.GET(subEndpoint,
             parameters: nil,
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 println("success")
-
+                
                 var subs: [Sub] = []
                 
                 let json = JSONValue(responseObject)
@@ -55,5 +56,10 @@ class SubService: ServiceBase, SubServiceProtocol
                 println(error.localizedDescription)
             }
         )
+    }
+    
+    func get(subName: String, completionBlock: SubServiceCompletionBlock)
+    {
+        self.get(subName, count: 0, afterId: "", completionBlock: completionBlock)
     }
 }

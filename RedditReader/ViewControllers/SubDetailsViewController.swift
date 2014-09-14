@@ -18,7 +18,7 @@ class SubDetailsViewController: UIViewController, UIWebViewDelegate
         super.viewDidLoad()
         self.webView.delegate = self
         var md = MMMarkdown.HTMLStringWithMarkdown(sub.text, error: nil)
-        md = "<html><head><style>body { font-size:40px; }</style></head><body><div style='padding: 5px; background-color: #fafafa; border: 1px solid #369; border-radius: 7px; margin: 10px; word-wrap: break-word;'>" + md + "</div></body></html>"
+        md = "<html><head><style>body { font-size:40px; font: verdana,arial,helvetica,sans-serif; }</style></head><body><div style='padding: 0 10px; background-color: #fafafa; border: 1px solid #369; border-radius: 7px; margin: 10px; word-wrap: break-word;'>" + md + "</div></body></html>"
         println("md")
         println(md)
         webView.loadHTMLString(md, baseURL: nil)

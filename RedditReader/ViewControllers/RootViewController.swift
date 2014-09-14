@@ -12,6 +12,9 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
 {
     var subCollection: SubCollection!
     
+    var infiniteScrollingIsLoading = false
+    var pullToRefreshIsLoading = false
+    
     @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad()
@@ -20,12 +23,23 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-//        self.tableView.rowHeight = UITableViewAutomaticDimension
-        
+
         subCollection = context().subs
         
         setupObserver()
         NSNotificationCenter.defaultCenter().postRetrieveSubNotificationFor("leagueoflegends")
+        
+        tableView.addPullToRefreshWithActionHandler {
+            println("PULL")
+            NSNotificationCenter.defaultCenter().postRetrieveSubNotificationFor("leagueoflegends")
+            self.pullToRefreshIsLoading = true
+        }
+        
+        tableView.addInfiniteScrollingWithActionHandler {
+            println("NEW DATA")
+            NSNotificationCenter.defaultCenter().postNotification(NotificationType.RetrieveNextPageSub)
+            self.infiniteScrollingIsLoading = true
+        }
     }
     
     override func didReceiveMemoryWarning()
@@ -44,6 +58,16 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         {
             println("DATA HAS CHANGE \(self.subCollection.collection.count)")
             self.tableView.reloadData()
+            if infiniteScrollingIsLoading
+            {
+                self.tableView.infiniteScrollingView.stopAnimating()
+                infiniteScrollingIsLoading = false
+            }
+            if pullToRefreshIsLoading
+            {
+                self.tableView.pullToRefreshView.stopAnimating()
+                pullToRefreshIsLoading = false
+            }
         }
         else
         {

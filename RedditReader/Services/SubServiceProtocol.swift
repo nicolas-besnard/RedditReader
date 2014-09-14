@@ -10,5 +10,5 @@ import Foundation
 
 protocol SubServiceProtocol
 {
-    func get(subName: String, completionBlock: SubServiceCompletionBlock)
+    func get(subName: String, count: Int, afterId: String, completionBlock: SubServiceCompletionBlock)
 }
