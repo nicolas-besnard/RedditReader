@@ -69,9 +69,12 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         let selectedSub = self.subCollection.collection[indexPath.row]
+        
         if selectedSub.url.contains("www.reddit.com")
         {
-            println("OPEN SUB IN APP")
+            let viewController = context().getSubDetailsViewController()
+            viewController.sub = selectedSub
+            self.navigationController?.pushViewController(viewController, animated: true)
         }
         else
         {

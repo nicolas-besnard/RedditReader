@@ -13,6 +13,7 @@
 		37024BF419B08602005AC32E /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37024BF319B08602005AC32E /* UIViewController.swift */; };
 		37024BF619B0861A005AC32E /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37024BF519B0861A005AC32E /* Context.swift */; };
 		37024BFA19B08958005AC32E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37024BF919B08958005AC32E /* Notification.swift */; };
+		3703F24619C59A2000FC32AA /* SubDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3703F24519C59A2000FC32AA /* SubDetailsTableViewCell.swift */; };
 		370956A619B5F12900A1C0A7 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370956A519B5F12900A1C0A7 /* WebViewController.swift */; };
 		3755656A19B079E800C67678 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3755656919B079E800C67678 /* AppDelegate.swift */; };
 		3755656C19B079E800C67678 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3755656B19B079E800C67678 /* RootViewController.swift */; };
@@ -20,6 +21,8 @@
 		3755657119B079E800C67678 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3755657019B079E800C67678 /* Images.xcassets */; };
 		3755657D19B079E800C67678 /* RedditReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3755657C19B079E800C67678 /* RedditReaderTests.swift */; };
 		37A5B49E19C4F82E00E193EC /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5B49D19C4F82E00E193EC /* String.swift */; };
+		37A5B4A119C5015900E193EC /* SubDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5B4A019C5015900E193EC /* SubDetailsService.swift */; };
+		37A5B4A419C503C100E193EC /* SubDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37A5B4A319C503C100E193EC /* SubDetailsViewController.swift */; };
 		37C3EFA319B08B1400F54544 /* SubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C3EFA219B08B1400F54544 /* SubService.swift */; };
 		37C3EFA519B08B2400F54544 /* ServiceBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C3EFA419B08B2400F54544 /* ServiceBase.swift */; };
 		37C3EFA719B08D6600F54544 /* MockSubService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C3EFA619B08D6600F54544 /* MockSubService.swift */; };
@@ -48,6 +51,7 @@
 		37024BF319B08602005AC32E /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		37024BF519B0861A005AC32E /* Context.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		37024BF919B08958005AC32E /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		3703F24519C59A2000FC32AA /* SubDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		370956A519B5F12900A1C0A7 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		370E086A19B07E500028F7B6 /* RedditReader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RedditReader-Bridging-Header.h"; sourceTree = "<group>"; };
 		3755656419B079E800C67678 /* RedditReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -60,6 +64,8 @@
 		3755657B19B079E800C67678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3755657C19B079E800C67678 /* RedditReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditReaderTests.swift; sourceTree = "<group>"; };
 		37A5B49D19C4F82E00E193EC /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		37A5B4A019C5015900E193EC /* SubDetailsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubDetailsService.swift; sourceTree = "<group>"; };
+		37A5B4A319C503C100E193EC /* SubDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubDetailsViewController.swift; sourceTree = "<group>"; };
 		37C3EFA219B08B1400F54544 /* SubService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubService.swift; sourceTree = "<group>"; };
 		37C3EFA419B08B2400F54544 /* ServiceBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServiceBase.swift; sourceTree = "<group>"; };
 		37C3EFA619B08D6600F54544 /* MockSubService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockSubService.swift; sourceTree = "<group>"; };
@@ -149,6 +155,7 @@
 				37C3EFA419B08B2400F54544 /* ServiceBase.swift */,
 				37C3EFA619B08D6600F54544 /* MockSubService.swift */,
 				37C3EFAC19B0A53A00F54544 /* SubServiceProtocol.swift */,
+				37A5B4A019C5015900E193EC /* SubDetailsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -223,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				3755656B19B079E800C67678 /* RootViewController.swift */,
+				37A5B4A319C503C100E193EC /* SubDetailsViewController.swift */,
 				370956A519B5F12900A1C0A7 /* WebViewController.swift */,
 			);
 			path = ViewControllers;
@@ -232,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				37C3EFB019B0AC7B00F54544 /* MainTableViewCell.swift */,
+				3703F24519C59A2000FC32AA /* SubDetailsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -370,11 +379,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37A5B4A119C5015900E193EC /* SubDetailsService.swift in Sources */,
 				3755656C19B079E800C67678 /* RootViewController.swift in Sources */,
 				37C3EFA319B08B1400F54544 /* SubService.swift in Sources */,
+				3703F24619C59A2000FC32AA /* SubDetailsTableViewCell.swift in Sources */,
 				37024BEF19B08453005AC32E /* SubCollection.swift in Sources */,
 				37C3EFA919B09C5D00F54544 /* ControllerBase.swift in Sources */,
 				37C3EFB119B0AC7B00F54544 /* MainTableViewCell.swift in Sources */,
+				37A5B4A419C503C100E193EC /* SubDetailsViewController.swift in Sources */,
 				37024BE819B0823E005AC32E /* SwiftyJSON.swift in Sources */,
 				37024BF119B084FB005AC32E /* Sub.swift in Sources */,
 				37C3EFAD19B0A53A00F54544 /* SubServiceProtocol.swift in Sources */,

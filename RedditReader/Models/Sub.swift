@@ -20,6 +20,7 @@ class Sub
     var createdAt: NSNumber!
     var sub: String!
     var nbComments: Int!
+    var text: String!
     
     init()
     {}

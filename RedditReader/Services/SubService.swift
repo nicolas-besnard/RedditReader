@@ -12,8 +12,8 @@ class SubService: ServiceBase, SubServiceProtocol
 {
     func get(subName: String, completionBlock: SubServiceCompletionBlock)
     {
-//        let subEndpoint = self.endpoint + "/" + subName + ".json"
-        let subEndpoint = self.endpoint + "/.json"
+        let subEndpoint = self.endpoint + "/r/" + subName + ".json"
+//        let subEndpoint = self.endpoint + "/.json"
         manager.GET(subEndpoint,
             parameters: nil,
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
@@ -39,6 +39,7 @@ class SubService: ServiceBase, SubServiceProtocol
                     newSub.sub = subData["subreddit"].string
                     newSub.nbComments = subData["num_comments"].integer
                     newSub.author = subData["author"].string
+                    newSub.text = subData["selftext"].string
                     
                     if let thumbnail = subData["thumbnail"].string
                     {

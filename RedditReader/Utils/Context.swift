@@ -16,6 +16,7 @@ class Context
     // Services
     var subService = SubService()
 //    var subService = MockSubService()
+    var subDetailsService = SubDetailsService()
     
     // Controllers
     var subCollectionController = SubCollectionController()
@@ -27,7 +28,18 @@ class Context
     
     func getWebViewController() -> WebViewController
     {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        return storyboard.instantiateViewControllerWithIdentifier("WebViewController") as WebViewController
+        return getStoryboard().instantiateViewControllerWithIdentifier("WebViewController") as WebViewController
+    }
+    
+    func getSubDetailsViewController() -> SubDetailsViewController
+    {
+        return getStoryboard().instantiateViewControllerWithIdentifier("SubDetailsViewController") as SubDetailsViewController
+    }
+    
+    private
+    
+    func getStoryboard() -> UIStoryboard
+    {
+        return UIStoryboard(name: "Main", bundle: nil)
     }
 }
