@@ -17,10 +17,13 @@ class SubDetailsViewController: UIViewController, UIWebViewDelegate
     {
         super.viewDidLoad()
         self.webView.delegate = self
-        let md = MMMarkdown.HTMLStringWithMarkdown(sub.text, error: nil)
-         webView.loadHTMLString(md, baseURL: nil)
+        var md = MMMarkdown.HTMLStringWithMarkdown(sub.text, error: nil)
+        md = "<html><head><style>body { font-size:40px; }</style></head><body><div style='padding: 5px; background-color: #fafafa; border: 1px solid #369; border-radius: 7px; margin: 10px; word-wrap: break-word;'>" + md + "</div></body></html>"
+        println("md")
+        println(md)
+        webView.loadHTMLString(md, baseURL: nil)
     }
-    
+
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool
     {
         if navigationType == UIWebViewNavigationType.LinkClicked
@@ -35,6 +38,11 @@ class SubDetailsViewController: UIViewController, UIWebViewDelegate
         {
             return true
         }
+    }
+    
+    func webViewDidFinishLoad(webView: UIWebView)
+    {
+//        webView.stringByEvaluatingJavaScriptFromString(js)
     }
     
     override func didReceiveMemoryWarning()
