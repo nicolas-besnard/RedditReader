@@ -12,14 +12,24 @@ class WebViewController: UIViewController, UIWebViewDelegate
 {
     @IBOutlet weak var webView: UIWebView!
     
-    var sub: Sub!
+    var sub: Sub! {
+        didSet {
+            self.url = sub.url
+        }
+    }
+    var url: String!
 
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
-        let url = NSURL(string: sub.url)
-        self.webView.loadRequest(NSURLRequest(URL: url))
+//        if let hasSub = sub
+//        {
+//            let url = NSURL(string: hasSub.url)
+//            self.webView.loadRequest(NSURLRequest(URL: url))
+//        }
+        let nsUrl = NSURL(string: url)
+        self.webView.loadRequest(NSURLRequest(URL: nsUrl))
     }
 
     override func didReceiveMemoryWarning()

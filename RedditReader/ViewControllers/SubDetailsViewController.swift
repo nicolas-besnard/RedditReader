@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SubDetailsViewController: UIViewController
+class SubDetailsViewController: UIViewController, UIWebViewDelegate
 {
     @IBOutlet weak var webView: UIWebView!
     var sub: Sub!
@@ -16,9 +16,25 @@ class SubDetailsViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        println("MARKDOWN")
+        self.webView.delegate = self
         let md = MMMarkdown.HTMLStringWithMarkdown(sub.text, error: nil)
          webView.loadHTMLString(md, baseURL: nil)
+    }
+    
+    func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool
+    {
+        if navigationType == UIWebViewNavigationType.LinkClicked
+        {
+            println("link clicked \(request.URL)")
+            let web = context().getWebViewController()
+            web.url = request.URL.absoluteString
+            self.navigationController?.pushViewController(web, animated: true)
+            return false
+        }
+        else
+        {
+            return true
+        }
     }
     
     override func didReceiveMemoryWarning()
