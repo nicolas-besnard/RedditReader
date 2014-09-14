@@ -28,19 +28,32 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         setupObserver()
         setupNavigationItems()
-        NSNotificationCenter.defaultCenter().postRetrieveSubNotificationFor("leagueoflegends")
         
-        tableView.addPullToRefreshWithActionHandler {
-            println("PULL")
-            NSNotificationCenter.defaultCenter().postRetrieveSubNotificationFor("leagueoflegends")
-            self.pullToRefreshIsLoading = true
-        }
+//        tableView.addPullToRefreshWithActionHandler {
+//            println("PULL")
+//            NSNotificationCenter.defaultCenter().postRetrieveSubNotificationFor(context().subSuscribed)
+//            self.pullToRefreshIsLoading = true
+//        }
         
         tableView.addInfiniteScrollingWithActionHandler {
             println("NEW DATA")
             NSNotificationCenter.defaultCenter().postNotification(NotificationType.RetrieveNextPageSub)
             self.infiniteScrollingIsLoading = true
         }
+        
+        if let sub = context().subSuscribed
+        {
+            NSNotificationCenter.defaultCenter().postRetrieveSubNotificationFor(sub)
+        }
+        else
+        {
+            onRightButton()
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool)
+    {
+        super.viewDidAppear(animated)
     }
     
     override func didReceiveMemoryWarning()

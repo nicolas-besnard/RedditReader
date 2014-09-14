@@ -21,6 +21,16 @@ class Context
     // Controllers
     var subCollectionController = SubCollectionController()
     
+    // Others
+    var subSuscribed: String! {
+        get {
+            return NSUserDefaults.standardUserDefaults().valueForKey("subSuscribed") as? String
+        }
+        set {
+            NSUserDefaults.standardUserDefaults().setValue(newValue, forKey: "subSuscribed")
+        }
+    }
+    
     func setup()
     {
         subCollectionController.setup()

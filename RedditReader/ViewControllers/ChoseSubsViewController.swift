@@ -58,6 +58,7 @@ class ChoseSubsViewController: UIViewController, UITableViewDelegate, UITableVie
         let subName = subsCat[indexPath.row]
         
         NSNotificationCenter.defaultCenter().postRetrieveSubNotificationFor(subName)
+        context().subSuscribed = subName
         onCancelButton()
     }
 
