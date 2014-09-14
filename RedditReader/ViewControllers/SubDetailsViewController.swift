@@ -35,7 +35,7 @@ class SubDetailsViewController: UIViewController, UITableViewDataSource, UITable
         if cell == nil
         {
             var newCell = SubDetailsTableViewCell()
-            newCell.subTextLabel.attributedText = sub.text
+            newCell.subTextLabel.text = sub.text
             return newCell
         }
         
