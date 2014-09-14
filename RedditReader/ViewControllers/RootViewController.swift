@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RootViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
+class RootViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate
 {
     var subCollection: SubCollection!
     
@@ -27,6 +27,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         subCollection = context().subs
         
         setupObserver()
+        setupNavigationItems()
         NSNotificationCenter.defaultCenter().postRetrieveSubNotificationFor("leagueoflegends")
         
         tableView.addPullToRefreshWithActionHandler {
@@ -50,6 +51,46 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     private func setupObserver()
     {
         self.subCollection.addObserver(self, forKeyPath: "collection", options: NSKeyValueObservingOptions.Initial, context: nil)
+    }
+    
+    // MARK: - UIPopoverPresentationControllerDelegate
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController!) -> UIModalPresentationStyle
+    {
+        return .FullScreen
+    }
+    
+    func presentationController(controller: UIPresentationController, viewControllerForAdaptivePresentationStyle style: UIModalPresentationStyle) -> UIViewController?
+    {
+        return UINavigationController(rootViewController: controller.presentedViewController)
+    }
+    
+    func onRightButton()
+    {
+        let popoverVC = storyboard?.instantiateViewControllerWithIdentifier("ChoseSubsViewController") as UIViewController
+        popoverVC.modalPresentationStyle = .Popover
+        let popoverController = popoverVC.popoverPresentationController
+        if let popoverController = popoverVC.popoverPresentationController {
+//            popoverController.sourceView = self.navigationItem.rightBarButtonItem!
+//            popoverController.sourceRect = sender.bounds
+            popoverController.permittedArrowDirections = .Any
+            popoverController.delegate = self
+        }
+        presentViewController(popoverVC, animated: true, completion: nil)
+//        let viewController = self.storyboard?.instantiateViewControllerWithIdentifier("ChoseSubsViewController") as ChoseSubsViewController
+////        self.navigationController?.pushViewController(viewController, animated: true)
+//
+//        var navCategories = self.storyboard?.instantiateViewControllerWithIdentifier("ChoseSubsViewController") as ChoseSubsViewController
+//        var categoriesVC = navCategories
+//
+//        var popController = UIPopoverController(contentViewController: navCategories)
+//        popController.presentPopoverFromBarButtonItem(self.navigationItem.rightBarButtonItem!,
+//                    permittedArrowDirections: UIPopoverArrowDirection.Any,
+//                    animated: true)
+    }
+    
+    private func setupNavigationItems() {
+        var rightButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Organize, target: self, action: "onRightButton")
+        self.navigationItem.rightBarButtonItem = rightButton
     }
     
     override func observeValueForKeyPath(keyPath: String!, ofObject object: AnyObject!, change: [NSObject : AnyObject]!, context: UnsafeMutablePointer<Void>)
