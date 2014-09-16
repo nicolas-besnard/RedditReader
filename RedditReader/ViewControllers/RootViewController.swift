@@ -142,9 +142,11 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
             viewController.sub = selectedSub
             self.navigationController?.pushViewController(viewController, animated: true)
         }
-        else if selectedSub.url.contains("youtube.com") ||  selectedSub.url.contains("youtu.be")
+        else if selectedSub.url.contains("youtube.com") || selectedSub.url.contains("youtu.be")
         {
-            UIApplication.sharedApplication().openURL(NSURL(string: selectedSub.url))
+            let viewController = context().getYoutubeViewController()
+            viewController.videoId = YoutubeVideoIDExtractor.extractId(selectedSub.url)
+            self.navigationController?.pushViewController(viewController, animated: true)
         }
         else
         {

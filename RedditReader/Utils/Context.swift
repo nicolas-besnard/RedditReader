@@ -46,6 +46,11 @@ class Context
         return getStoryboard().instantiateViewControllerWithIdentifier("SubDetailsViewController") as SubDetailsViewController
     }
     
+    func getYoutubeViewController() -> YoutubeViewController
+    {
+        return getStoryboard().instantiateViewControllerWithIdentifier("YoutubeViewController") as YoutubeViewController
+    }
+    
     private
     
     func getStoryboard() -> UIStoryboard

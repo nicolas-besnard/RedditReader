@@ -75,6 +75,39 @@
             </objects>
             <point key="canvasLocation" x="975" y="-406"/>
         </scene>
+        <!--YoutubeViewController-->
+        <scene sceneID="i9d-z4-JHD">
+            <objects>
+                <viewController storyboardIdentifier="YoutubeViewController" title="YoutubeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kHb-Pj-aYK" customClass="YoutubeViewController" customModule="RedditReader" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TMD-eA-gmO"/>
+                        <viewControllerLayoutGuide type="bottom" id="ENl-kI-K8m"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wf3-FS-JFT">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RsJ-N2-klw" customClass="YTPlayerView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RsJ-N2-klw" firstAttribute="top" secondItem="wf3-FS-JFT" secondAttribute="topMargin" id="Okz-Lt-bne"/>
+                            <constraint firstItem="RsJ-N2-klw" firstAttribute="leading" secondItem="wf3-FS-JFT" secondAttribute="leadingMargin" constant="-16" id="WCQ-NE-7He"/>
+                            <constraint firstItem="ENl-kI-K8m" firstAttribute="top" secondItem="RsJ-N2-klw" secondAttribute="bottom" id="Wyn-wH-Acr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RsJ-N2-klw" secondAttribute="trailing" constant="-16" id="hLf-nV-Urk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="youtubePlayerView" destination="RsJ-N2-klw" id="UF3-cy-Teb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D6O-gg-lt7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="217" y="-1755"/>
+        </scene>
         <!--Chose Subs View Controller-->
         <scene sceneID="ki8-3c-gY2">
             <objects>

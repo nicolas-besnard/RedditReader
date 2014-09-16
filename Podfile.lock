@@ -23,17 +23,20 @@ PODS:
   - DateTools (1.4.2)
   - MMMarkdown (0.3)
   - SVPullToRefresh (0.4.1)
+  - youtube-ios-player-helper (0.1.1)
 
 DEPENDENCIES:
   - AFNetworking
   - DateTools
   - MMMarkdown
   - SVPullToRefresh
+  - youtube-ios-player-helper (~> 0.1.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
   DateTools: 1d8f720ef48e0f229565509639dc31d48e99851b
   MMMarkdown: 95af8920c647512d1efa2ac8ac1932baf3266e2c
   SVPullToRefresh: d5161ebc833a38b465364412e5e307ca80bbb190
+  youtube-ios-player-helper: 53aecd0b4763a77e6890e9a7c55abb7b5c4bedea
 
 COCOAPODS: 0.33.1
