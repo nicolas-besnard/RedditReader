@@ -28,17 +28,29 @@ class SubDetailsService: ServiceBase
                 
                 for content in json!
                 {
-                    if content["data"]["children"][0]["kind"].string == "t3"
-                    {
-                        continue
-                    }
-                    
                     for comment in content["data"]["children"].array!
                     {
+                        if comment["kind"].string! != "t1"
+                        {
+                            break
+                        }
+                        
                         let newComment = SubComment()
-                        newComment.author = comment["data"]["author"].string!
-                        newComment.body = comment["data"]["body"].string!
-                        newComment.createdAt = comment["data"]["created_utc"].double!
+                        
+                        if let author = comment["data"]["author"].string
+                        {
+                            newComment.author = author
+                        }
+                        
+                        if let body = comment["data"]["body"].string
+                        {
+                            newComment.body = body
+                        }
+                        
+                        if let createdAt = comment["data"]["created_utc"].double
+                        {
+                            newComment.createdAt = createdAt
+                        }
                         
                         subComments.append(newComment)
                     }

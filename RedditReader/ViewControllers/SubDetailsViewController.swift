@@ -97,7 +97,7 @@ class SubDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
         let body = comment.body as NSString
         let size = body.boundingRectWithSize(CGSizeMake(CGRectGetWidth(self.tableView.bounds), CGFloat.max), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(16)], context: nil)
         
-        return size.height + 50
+        return size.height + 100
     }
     
     func webViewDidFinishLoad(webView: UIWebView)
