@@ -1,6 +1,6 @@
 platform :ios, deployment_target: '7.0'
 
-pod 'AFNetworking'
+pod "AFNetworking", "~> 2.0"
 pod 'DateTools'
 pod 'MMMarkdown'
 pod 'SVPullToRefresh'

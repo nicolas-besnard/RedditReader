@@ -26,7 +26,7 @@ PODS:
   - youtube-ios-player-helper (0.1.1)
 
 DEPENDENCIES:
-  - AFNetworking
+  - AFNetworking (~> 2.0)
   - DateTools
   - MMMarkdown
   - SVPullToRefresh

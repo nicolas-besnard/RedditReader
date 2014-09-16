@@ -85,13 +85,17 @@ class SubDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
         var md = MMMarkdown.HTMLStringWithMarkdown(comment.body, error: nil)
         md = "<html><head><style>body { font-size:40px; font: normal x-small verdana, arial, helvetica, sans-serif; }</style></head><body><div style='padding: 0 10px; background-color: #fafafa; border: 1px solid #369; border-radius: 7px; margin: 10px; word-wrap: break-word;'>" + md + "</div></body></html>"
         cell.bodyWebView.loadHTMLString(md, baseURL: nil)
-        
-        let result: NSString = cell.bodyWebView.stringByEvaluatingJavaScriptFromString("document.body.offsetHeight;")!
-        let height = CGFloat(result.floatValue) + 50
-        
-        println("CELL HEIGHT - \(height)")
-        cell.frame = CGRect(x: 0, y: 0, width: 320, height: height)
+        cell.bodyWebView.scrollView.scrollEnabled = false
         return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
+        let comment = subCommentsCollection.collection[indexPath.row]
+        let body = comment.body as NSString
+        let size = body.boundingRectWithSize(CGSizeMake(CGRectGetWidth(self.tableView.bounds), CGFloat.max), options: NSStringDrawingOptions.UsesLineFragmentOrigin, attributes: [NSFontAttributeName: UIFont.systemFontOfSize(16)], context: nil)
+        
+        return size.height + 50
     }
     
     func webViewDidFinishLoad(webView: UIWebView)
@@ -119,11 +123,6 @@ class SubDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int // Default is 1 if not implemented
-    {
-        return 1
-    }
-
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
