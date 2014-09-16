@@ -31,7 +31,7 @@ class SubDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
         subCommentsCollection = context().subComments
         
         subCommentsCollection.addObserver(self, forKeyPath: "collection", options: NSKeyValueObservingOptions.Initial, context: nil)
-
+    
         if let id = videoId
         {
             youtubePlayer = YTPlayerView(frame: CGRect(x: 0, y: 0, width: 320, height: 200))
@@ -42,6 +42,7 @@ class SubDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
         else
         {
             webView = UIWebView(frame: CGRect(x: 0, y: 0, width: 320, height: 1))
+            webView.tag = 4242
             webView.delegate = self
             println("web view")
             var md = MMMarkdown.HTMLStringWithMarkdown(sub.text, error: nil)
@@ -86,6 +87,7 @@ class SubDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
         md = "<html><head><style>body { font-size:40px; font: normal x-small verdana, arial, helvetica, sans-serif; }</style></head><body><div style='padding: 0 10px; background-color: #fafafa; border: 1px solid #369; border-radius: 7px; margin: 10px; word-wrap: break-word;'>" + md + "</div></body></html>"
         cell.bodyWebView.loadHTMLString(md, baseURL: nil)
         cell.bodyWebView.scrollView.scrollEnabled = false
+        cell.bodyWebView.delegate = self
         return cell
     }
     
@@ -100,11 +102,14 @@ class SubDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func webViewDidFinishLoad(webView: UIWebView)
     {
-        let result: NSString = webView.stringByEvaluatingJavaScriptFromString("document.body.offsetHeight;")!
-        let height = CGFloat(result.floatValue) + 50
+        if webView.tag == 4242
+        {
+            let result: NSString = webView.stringByEvaluatingJavaScriptFromString("document.body.offsetHeight;")!
+            let height = CGFloat(result.floatValue) + 50
 
-        self.webView.frame = CGRect(x: 0, y: 0, width: 320, height: height)
-        tableView.tableHeaderView = self.webView
+            self.webView.frame = CGRect(x: 0, y: 0, width: 320, height: height)
+            tableView.tableHeaderView = self.webView
+        }
     }
     
     func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool
