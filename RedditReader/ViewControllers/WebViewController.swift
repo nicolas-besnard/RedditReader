@@ -29,7 +29,8 @@ class WebViewController: UIViewController, UIWebViewDelegate
 //            self.webView.loadRequest(NSURLRequest(URL: url))
 //        }
         let nsUrl = NSURL(string: url)
-        self.webView.loadRequest(NSURLRequest(URL: nsUrl))
+
+        webView.loadRequest(NSURLRequest(URL: nsUrl))
     }
 
     override func didReceiveMemoryWarning()

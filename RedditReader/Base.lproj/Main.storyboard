@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CUN-Yf-VIx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="CUN-Yf-VIx">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -138,27 +138,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView multipleTouchEnabled="YES" contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sKq-lS-tMl">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="155" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Ob6-Bs-dVs">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                            </webView>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SubDetailsCellId" rowHeight="155" id="FcL-QU-yQ5" customClass="SubDetailsTableViewCell" customModule="RedditReader" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FcL-QU-yQ5" id="K7v-Bk-8rH">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="sKq-lS-tMl" firstAttribute="top" secondItem="M9h-iT-aWI" secondAttribute="topMargin" id="Fiv-Kc-Fwf"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="sKq-lS-tMl" secondAttribute="trailing" constant="-16" id="QQ4-c4-kVS"/>
-                            <constraint firstItem="qM2-cb-GuA" firstAttribute="top" secondItem="sKq-lS-tMl" secondAttribute="bottom" id="ZKj-4q-Ome"/>
-                            <constraint firstItem="sKq-lS-tMl" firstAttribute="leading" secondItem="M9h-iT-aWI" secondAttribute="leadingMargin" constant="-16" id="cgF-h2-sMy"/>
+                            <constraint firstItem="qM2-cb-GuA" firstAttribute="top" secondItem="Ob6-Bs-dVs" secondAttribute="bottom" id="95k-Wd-fye"/>
+                            <constraint firstItem="Ob6-Bs-dVs" firstAttribute="top" secondItem="M9h-iT-aWI" secondAttribute="topMargin" id="Yae-XQ-Bzf"/>
+                            <constraint firstItem="Ob6-Bs-dVs" firstAttribute="leading" secondItem="M9h-iT-aWI" secondAttribute="leadingMargin" constant="-16" id="cx3-SE-rTi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ob6-Bs-dVs" secondAttribute="trailing" constant="-16" id="i5D-KM-RE8"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="webView" destination="sKq-lS-tMl" id="oB6-uv-5oa"/>
+                        <outlet property="tableView" destination="Ob6-Bs-dVs" id="1B6-Yj-lQ1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HLZ-sh-qoR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="975" y="-1092"/>
+            <point key="canvasLocation" x="975" y="-1093"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="CbD-TK-xbH">
@@ -172,9 +180,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0l-OA-Q5D">
+                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N0l-OA-Q5D">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

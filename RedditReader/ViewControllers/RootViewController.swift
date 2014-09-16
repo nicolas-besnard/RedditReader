@@ -142,6 +142,10 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
             viewController.sub = selectedSub
             self.navigationController?.pushViewController(viewController, animated: true)
         }
+        else if selectedSub.url.contains("youtube.com") ||  selectedSub.url.contains("youtu.be")
+        {
+            UIApplication.sharedApplication().openURL(NSURL(string: selectedSub.url))
+        }
         else
         {
             let web = context().getWebViewController()

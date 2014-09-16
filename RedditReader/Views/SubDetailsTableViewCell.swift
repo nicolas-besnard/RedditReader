@@ -11,10 +11,7 @@ import UIKit
 let SubDetailsCellId = "SubDetailsCellId"
 
 class SubDetailsTableViewCell: UITableViewCell
-{
-    
-    @IBOutlet weak var subTextLabel: UILabel!
-
+{    
     override func awakeFromNib()
     {
         super.awakeFromNib()
