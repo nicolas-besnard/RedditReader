@@ -132,6 +132,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         return MainTableViewCell.heightForText(text, bounds: tableView.bounds)
     }
     
+    // ToDo: Refactor
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         let selectedSub = self.subCollection.collection[indexPath.row]
@@ -148,6 +149,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
             println("YOUTUBE")
             let viewController = context().getSubDetailsViewController()
             viewController.videoId = YoutubeVideoIDExtractor.extractId(selectedSub.url)
+            viewController.sub = selectedSub
             self.navigationController?.pushViewController(viewController, animated: true)
         }
         else

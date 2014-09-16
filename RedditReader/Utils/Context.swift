@@ -12,14 +12,15 @@ class Context
 {
     // Collections
     var subs = SubCollection()
+    var subComments = SubCommentCollection()
     
     // Services
     var subService = SubService()
-//    var subService = MockSubService()
     var subDetailsService = SubDetailsService()
     
     // Controllers
     var subCollectionController = SubCollectionController()
+    var subCommentCollectionController = SubCommentCollectionController()
     
     // Others
     var subSuscribed: String! {
@@ -34,6 +35,7 @@ class Context
     func setup()
     {
         subCollectionController.setup()
+        subCommentCollectionController.setup()
     }
     
     func getWebViewController() -> WebViewController

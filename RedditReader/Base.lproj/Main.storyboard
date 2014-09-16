@@ -180,7 +180,30 @@
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FcL-QU-yQ5" id="K7v-Bk-8rH">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAc-O7-trQ">
+                                                    <rect key="frame" x="8" y="8" width="184" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Om1-Sx-dXr">
+                                                    <rect key="frame" x="0.0" y="39" width="600" height="116"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                                                </webView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Om1-Sx-dXr" secondAttribute="trailing" constant="-8" id="UhA-3V-Far"/>
+                                                <constraint firstItem="Om1-Sx-dXr" firstAttribute="leading" secondItem="K7v-Bk-8rH" secondAttribute="leadingMargin" constant="-8" id="X8g-sd-Gpn"/>
+                                                <constraint firstItem="Om1-Sx-dXr" firstAttribute="top" secondItem="fAc-O7-trQ" secondAttribute="bottom" constant="10" id="osR-DM-3MH"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Om1-Sx-dXr" secondAttribute="bottom" constant="-8" id="uP9-VP-Hsk"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="authorLabel" destination="fAc-O7-trQ" id="0Oa-qP-LeN"/>
+                                            <outlet property="bodyWebView" destination="Om1-Sx-dXr" id="VWB-Sf-9Wj"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

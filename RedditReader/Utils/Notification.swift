@@ -13,10 +13,13 @@ enum NotificationType: String
     case NewSubs = "ReceivedNewSubs"
     case RetrieveSub = "RetrieveSub"
     case RetrieveNextPageSub = "RetrieveNextPageSub"
+    case RetrieveSubCommentsNotification = "RetrieveSubCommentsNotification"
 }
 
 let _subNameKey = "_subNameKey"
 let _afterIdKey = "_afterIdKey"
+
+let _subPermalinkKey = "_subPermalinkKey"
 
 extension NSNotificationCenter
 {
@@ -47,6 +50,17 @@ extension NSNotificationCenter
         let notification = NSNotification(name: NotificationType.RetrieveSub.toRaw(), object: nil, userInfo: userInfo)
         self.postNotification(notification)
     }
+    
+    // Retrieve sub's comments
+    
+    func postRetrieveSubCommentsFor(permalink: String)
+    {
+        var userInfo = Dictionary<String, AnyObject>()
+        userInfo[_subPermalinkKey] = permalink
+        
+        let notification = NSNotification(name: NotificationType.RetrieveSubCommentsNotification.toRaw(), object: nil, userInfo: userInfo)
+        self.postNotification(notification)
+    }
 }
 
 extension NSNotification
@@ -65,6 +79,15 @@ extension NSNotification
         if let info = userInfo
         {
             return info[_afterIdKey] as? NSString
+        }
+        return nil
+    }
+    
+    func subPermalink() -> String?
+    {
+        if let info = userInfo
+        {
+            return info[_subPermalinkKey] as? NSString
         }
         return nil
     }

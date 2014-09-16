@@ -15,6 +15,9 @@
 		37024BFA19B08958005AC32E /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37024BF919B08958005AC32E /* Notification.swift */; };
 		3703F24619C59A2000FC32AA /* SubDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3703F24519C59A2000FC32AA /* SubDetailsTableViewCell.swift */; };
 		370956A619B5F12900A1C0A7 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 370956A519B5F12900A1C0A7 /* WebViewController.swift */; };
+		37168E7219C884BF00BD50CB /* SubComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37168E7119C884BF00BD50CB /* SubComment.swift */; };
+		37168E7419C8860700BD50CB /* SubCommentCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37168E7319C8860700BD50CB /* SubCommentCollection.swift */; };
+		37168E7A19C886AE00BD50CB /* SubCommentCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37168E7919C886AE00BD50CB /* SubCommentCollectionController.swift */; };
 		3755656A19B079E800C67678 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3755656919B079E800C67678 /* AppDelegate.swift */; };
 		3755656C19B079E800C67678 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3755656B19B079E800C67678 /* RootViewController.swift */; };
 		3755656F19B079E800C67678 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3755656D19B079E800C67678 /* Main.storyboard */; };
@@ -57,6 +60,9 @@
 		3703F24519C59A2000FC32AA /* SubDetailsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubDetailsTableViewCell.swift; sourceTree = "<group>"; };
 		370956A519B5F12900A1C0A7 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		370E086A19B07E500028F7B6 /* RedditReader-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RedditReader-Bridging-Header.h"; sourceTree = "<group>"; };
+		37168E7119C884BF00BD50CB /* SubComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubComment.swift; sourceTree = "<group>"; };
+		37168E7319C8860700BD50CB /* SubCommentCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCommentCollection.swift; sourceTree = "<group>"; };
+		37168E7919C886AE00BD50CB /* SubCommentCollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubCommentCollectionController.swift; sourceTree = "<group>"; };
 		3755656419B079E800C67678 /* RedditReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3755656819B079E800C67678 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3755656919B079E800C67678 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				37024BEE19B08453005AC32E /* SubCollection.swift */,
+				37168E7319C8860700BD50CB /* SubCommentCollection.swift */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
@@ -143,6 +150,7 @@
 			children = (
 				37C3EFA819B09C5D00F54544 /* ControllerBase.swift */,
 				37C3EFAA19B09C9200F54544 /* SubCollectionController.swift */,
+				37168E7919C886AE00BD50CB /* SubCommentCollectionController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -151,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				37024BF019B084FB005AC32E /* Sub.swift */,
+				37168E7119C884BF00BD50CB /* SubComment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -389,12 +398,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				37A5B4A119C5015900E193EC /* SubDetailsService.swift in Sources */,
+				37168E7419C8860700BD50CB /* SubCommentCollection.swift in Sources */,
 				3755656C19B079E800C67678 /* RootViewController.swift in Sources */,
 				37C3EFA319B08B1400F54544 /* SubService.swift in Sources */,
 				3703F24619C59A2000FC32AA /* SubDetailsTableViewCell.swift in Sources */,
 				37024BEF19B08453005AC32E /* SubCollection.swift in Sources */,
 				37C3EFA919B09C5D00F54544 /* ControllerBase.swift in Sources */,
 				37C3EFB119B0AC7B00F54544 /* MainTableViewCell.swift in Sources */,
+				37168E7A19C886AE00BD50CB /* SubCommentCollectionController.swift in Sources */,
 				37A5B4A419C503C100E193EC /* SubDetailsViewController.swift in Sources */,
 				37024BE819B0823E005AC32E /* SwiftyJSON.swift in Sources */,
 				37024BF119B084FB005AC32E /* Sub.swift in Sources */,
@@ -404,6 +415,7 @@
 				37024BF619B0861A005AC32E /* Context.swift in Sources */,
 				37C3EFA519B08B2400F54544 /* ServiceBase.swift in Sources */,
 				37024BF419B08602005AC32E /* UIViewController.swift in Sources */,
+				37168E7219C884BF00BD50CB /* SubComment.swift in Sources */,
 				3767167B19C874E100284804 /* YoutubeVideoIDExtractor.swift in Sources */,
 				37C3EFA719B08D6600F54544 /* MockSubService.swift in Sources */,
 				37C3EFAB19B09C9200F54544 /* SubCollectionController.swift in Sources */,

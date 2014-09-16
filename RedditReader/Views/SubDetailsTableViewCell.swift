@@ -11,7 +11,10 @@ import UIKit
 let SubDetailsCellId = "SubDetailsCellId"
 
 class SubDetailsTableViewCell: UITableViewCell
-{    
+{
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var bodyWebView: UIWebView!
+    
     override func awakeFromNib()
     {
         super.awakeFromNib()

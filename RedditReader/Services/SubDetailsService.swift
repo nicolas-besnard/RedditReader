@@ -8,20 +8,43 @@
 
 import Foundation
 
-typealias ReadSubServiceCompletionBlock = (subs: [Sub]) -> Void
+typealias ReadSubServiceCompletionBlock = (subComments: [SubComment]) -> Void
 
 class SubDetailsService: ServiceBase
 {
     func get(url: String, completionBlock: ReadSubServiceCompletionBlock)
     {
-        println("SubDetails \(url)")
-        manager.GET(url + ".json",
+        let realUrl = "http://reddit.com/" + url + ".json?depth=1"
+        
+        println("SubDetails \(realUrl)")
+        manager.GET(realUrl,
             parameters: nil,
             success: { (operation: AFHTTPRequestOperation!, responseObject: AnyObject!) in
                 println("success")
-                let json = JSONValue(responseObject)
                 
-                println(json.array)
+                var subComments: [SubComment] = []
+                
+                let json = JSONValue(responseObject).array
+                
+                for content in json!
+                {
+                    if content["data"]["children"][0]["kind"].string == "t3"
+                    {
+                        continue
+                    }
+                    
+                    for comment in content["data"]["children"].array!
+                    {
+                        let newComment = SubComment()
+                        newComment.author = comment["data"]["author"].string!
+                        newComment.body = comment["data"]["body"].string!
+                        newComment.createdAt = comment["data"]["created_utc"].double!
+                        
+                        subComments.append(newComment)
+                    }
+                }
+                
+                completionBlock(subComments: subComments)
             },
             failure: { (operation: AFHTTPRequestOperation!, error: NSError!) in
                 println("fail")
