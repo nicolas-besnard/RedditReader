@@ -8,14 +8,14 @@
 
 import UIKit
 
-class SubDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIWebViewDelegate
+class SubDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIWebViewDelegate, YTPlayerViewDelegate
 {
     @IBOutlet weak var tableView: UITableView!
     
-    var webViewHeight: CGFloat?
-    
     var sub: Sub!
     var webView: UIWebView!
+    var youtubePlayer: YTPlayerView!
+    var videoId: String!
     
     override func viewDidLoad()
     {
@@ -23,12 +23,29 @@ class SubDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
         
         tableView.delegate = self
         tableView.dataSource = self
-        webView = UIWebView(frame: CGRect(x: 0, y: 0, width: 320, height: 30))
-        webView.delegate = self
         
-        var md = MMMarkdown.HTMLStringWithMarkdown(sub.text, error: nil)
-        md = "<html><head><style>body { font-size:40px; font: normal x-small verdana, arial, helvetica, sans-serif; }</style></head><body><div style='padding: 0 10px; background-color: #fafafa; border: 1px solid #369; border-radius: 7px; margin: 10px; word-wrap: break-word;'>" + md + "</div></body></html>"
-        webView.loadHTMLString(md, baseURL: nil)
+        if let id = videoId
+        {
+            youtubePlayer = YTPlayerView(frame: CGRect(x: 0, y: 0, width: 320, height: 200))
+            println("load \(id)")
+            youtubePlayer.delegate = self
+            youtubePlayer.loadWithVideoId(id)
+        }
+        else
+        {
+            webView = UIWebView(frame: CGRect(x: 0, y: 0, width: 320, height: 1))
+            webView.delegate = self
+            println("web view")
+            var md = MMMarkdown.HTMLStringWithMarkdown(sub.text, error: nil)
+            md = "<html><head><style>body { font-size:40px; font: normal x-small verdana, arial, helvetica, sans-serif; }</style></head><body><div style='padding: 0 10px; background-color: #fafafa; border: 1px solid #369; border-radius: 7px; margin: 10px; word-wrap: break-word;'>" + md + "</div></body></html>"
+            webView.loadHTMLString(md, baseURL: nil)
+        }
+    }
+    
+    func playerViewDidBecomeReady(playerView: YTPlayerView!)
+    {
+        println("READY")
+        self.tableView.tableHeaderView = playerView
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int

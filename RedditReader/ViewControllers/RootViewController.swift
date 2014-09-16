@@ -23,17 +23,17 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
-
+        
         subCollection = context().subs
         
         setupObserver()
         setupNavigationItems()
         
-//        tableView.addPullToRefreshWithActionHandler {
-//            println("PULL")
-//            NSNotificationCenter.defaultCenter().postRetrieveSubNotificationFor(context().subSuscribed)
-//            self.pullToRefreshIsLoading = true
-//        }
+        //        tableView.addPullToRefreshWithActionHandler {
+        //            println("PULL")
+        //            NSNotificationCenter.defaultCenter().postRetrieveSubNotificationFor(context().subSuscribed)
+        //            self.pullToRefreshIsLoading = true
+        //        }
         
         tableView.addInfiniteScrollingWithActionHandler {
             println("NEW DATA")
@@ -122,7 +122,7 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
     {
         var cell = tableView.dequeueReusableCellWithIdentifier(MainTableCellId) as MainTableViewCell
         cell.sub = self.subCollection.collection[indexPath.row]
-    
+        
         return cell
     }
     
@@ -138,24 +138,27 @@ class RootViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if selectedSub.url.contains("www.reddit.com")
         {
+            println("REDDIT")
             let viewController = context().getSubDetailsViewController()
             viewController.sub = selectedSub
             self.navigationController?.pushViewController(viewController, animated: true)
         }
         else if selectedSub.url.contains("youtube.com") || selectedSub.url.contains("youtu.be")
         {
-            let viewController = context().getYoutubeViewController()
+            println("YOUTUBE")
+            let viewController = context().getSubDetailsViewController()
             viewController.videoId = YoutubeVideoIDExtractor.extractId(selectedSub.url)
             self.navigationController?.pushViewController(viewController, animated: true)
         }
         else
         {
+            println("WEB")
             let web = context().getWebViewController()
             web.sub = selectedSub
             self.navigationController?.pushViewController(web, animated: true)
         }
     }
-
+    
     func numberOfSectionsInTableView(tableView: UITableView!) -> Int
     {
         return 1
