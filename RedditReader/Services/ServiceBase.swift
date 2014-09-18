@@ -17,7 +17,7 @@ class ServiceBase
     
     init()
     {
-        self.manager.requestSerializer = AFJSONRequestSerializer()
+        self.manager.requestSerializer = AFJSONRequestSerializer(writingOptions: NSJSONWritingOptions.allZeros)
     }
     
     func handleError(operation: AFHTTPRequestOperation!, error: NSError!)

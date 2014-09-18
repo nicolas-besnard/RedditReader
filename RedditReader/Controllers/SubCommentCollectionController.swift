@@ -22,7 +22,7 @@ class SubCommentCollectionController: ControllerBase
         
         NSNotificationCenter.defaultCenter().addObserver(self,
             selector: "retrieveSubComments:",
-            name: NotificationType.RetrieveSubCommentsNotification.toRaw(),
+            name: NotificationType.RetrieveSubCommentsNotification.rawValue,
             object: nil)
     }
     

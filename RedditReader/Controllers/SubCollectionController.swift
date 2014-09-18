@@ -24,12 +24,12 @@ class SubCollectionController: ControllerBase
         
         NSNotificationCenter.defaultCenter().addObserver(self,
             selector: "retrieveSubsForName:",
-            name: NotificationType.RetrieveSub.toRaw(),
+            name: NotificationType.RetrieveSub.rawValue,
             object: nil)
         
         NSNotificationCenter.defaultCenter().addObserver(self,
             selector: "retrieveNextPageSub:",
-            name: NotificationType.RetrieveNextPageSub.toRaw(),
+            name: NotificationType.RetrieveNextPageSub.rawValue,
             object: nil)
     }
     

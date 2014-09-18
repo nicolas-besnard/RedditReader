@@ -31,9 +31,9 @@ class MainTableViewCell: UITableViewCell
             if let thumbnail = sub.thumbnail
             {
                 let url = NSURL(string: thumbnail)
-                let data = NSData(contentsOfURL: url)
+                let data = NSData(contentsOfURL: url!)
 
-                thumbnailView.image = UIImage(data: data)
+                thumbnailView.image = UIImage(data: data!)
             }
         }
     }

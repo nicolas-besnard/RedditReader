@@ -25,7 +25,7 @@ extension NSNotificationCenter
 {
     func postNotification(type: NotificationType)
     {
-        self.postNotificationName(type.toRaw(), object: nil)
+        self.postNotificationName(type.rawValue, object: nil)
     }
 
     // RetrieveSub
@@ -35,7 +35,7 @@ extension NSNotificationCenter
         var userInfo = Dictionary<String, AnyObject>()
         userInfo[_subNameKey] = subName
 
-        let notification = NSNotification(name: NotificationType.RetrieveSub.toRaw(), object: nil, userInfo: userInfo)
+        let notification = NSNotification(name: NotificationType.RetrieveSub.rawValue, object: nil, userInfo: userInfo)
         self.postNotification(notification)
     }
     
@@ -47,7 +47,7 @@ extension NSNotificationCenter
         userInfo[_subNameKey] = subName
         userInfo[_afterIdKey] = afterId
         
-        let notification = NSNotification(name: NotificationType.RetrieveSub.toRaw(), object: nil, userInfo: userInfo)
+        let notification = NSNotification(name: NotificationType.RetrieveSub.rawValue, object: nil, userInfo: userInfo)
         self.postNotification(notification)
     }
     
@@ -58,7 +58,7 @@ extension NSNotificationCenter
         var userInfo = Dictionary<String, AnyObject>()
         userInfo[_subPermalinkKey] = permalink
         
-        let notification = NSNotification(name: NotificationType.RetrieveSubCommentsNotification.toRaw(), object: nil, userInfo: userInfo)
+        let notification = NSNotification(name: NotificationType.RetrieveSubCommentsNotification.rawValue, object: nil, userInfo: userInfo)
         self.postNotification(notification)
     }
 }
