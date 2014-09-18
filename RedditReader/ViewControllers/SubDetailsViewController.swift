@@ -57,7 +57,7 @@ class SubDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
                 style += "<link rel=\"stylesheet\" href=\"\(css)\"></head>"
             }
             
-            var md = "<html><head>\(style)</head><body margin=\"0\"><div style='padding: 0 5px; background-color: #fafafa; border: 1px solid #369; border-radius: 7px; margin: 15px; word-wrap: break-word;'>" + sub.text.convertHTMLEntities() + "</div></body></html>"
+            var md = "<!DOCTYPE html><html><head>\(style)<style>body { background-color: white; } .md ul { margin-left: -20px; } .md>* { margin: 5px 0 5px 0; }</style></head><body margin=\"0\"><div style='padding: 0 5px; border: 1px solid #369; border-radius: 7px; margin-right: 15px; word-wrap: break-word;'>" + sub.text.convertHTMLEntities() + "</div></body></html>"
             println(md)
             webView.loadHTMLString(md, baseURL: nil)
         }
