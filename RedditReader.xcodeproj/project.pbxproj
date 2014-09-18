@@ -314,7 +314,7 @@
 				TargetAttributes = {
 					3755656319B079E700C67678 = {
 						CreatedOnToolsVersion = 6.0;
-						DevelopmentTeam = EMXZX9H3PQ;
+						DevelopmentTeam = 7K3Z2N2BX9;
 					};
 					3755657519B079E800C67678 = {
 						CreatedOnToolsVersion = 6.0;
@@ -543,6 +543,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = RedditReader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RedditReader/RedditReader-Bridging-Header.h";
@@ -559,6 +560,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = RedditReader/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "RedditReader/RedditReader-Bridging-Header.h";

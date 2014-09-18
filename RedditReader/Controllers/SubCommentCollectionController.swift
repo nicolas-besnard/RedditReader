@@ -33,6 +33,7 @@ class SubCommentCollectionController: ControllerBase
             println("Retrieve comments for \(permalink)")
             subCommentService.get(permalink, completionBlock: { (subComments: [SubComment]) in
                 println("RETRIEVE COUNT : \(subComments.count)")
+                println("PREVIOUS COUNT : \(self.subComments.collection.count)")
                 self.subComments.collection = subComments
             })
         }
