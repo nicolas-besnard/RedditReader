@@ -46,9 +46,19 @@ class SubDetailsViewController: UIViewController, UITableViewDelegate, UITableVi
             webView.tag = 4242
             webView.delegate = self
             println("web view")
-            println(sub.text)
-            var md = MMMarkdown.HTMLStringWithMarkdown(sub.text, error: nil)
-            md = "<html><head><style>body { font-size:40px; font: normal x-small verdana, arial, helvetica, sans-serif; }</style></head><body><div style='padding: 0 10px; background-color: #fafafa; border: 1px solid #369; border-radius: 7px; margin: 10px; word-wrap: break-word;'>" + md + "</div></body></html>"
+            
+            let csss = ["http://b.thumbs.redditmedia.com/x5DddAbZay3Yyu1ww4ZDhf4BhpSadqXbro1PLs_h1CM.css",
+                        "http://www.redditstatic.com/old-markdown.bVOmCRk7IMc.css"]
+            
+            var style = ""
+            
+            for css in csss
+            {
+                style += "<link rel=\"stylesheet\" href=\"\(css)\"></head>"
+            }
+            
+            var md = "<html><head>\(style)</head><body margin=\"0\"><div style='padding: 0 5px; background-color: #fafafa; border: 1px solid #369; border-radius: 7px; margin: 15px; word-wrap: break-word;'>" + sub.text.convertHTMLEntities() + "</div></body></html>"
+            println(md)
             webView.loadHTMLString(md, baseURL: nil)
         }
     }

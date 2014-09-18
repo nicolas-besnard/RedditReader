@@ -40,7 +40,8 @@ class SubService: ServiceBase, SubServiceProtocol
                     newSub.sub = subData["subreddit"].string
                     newSub.nbComments = subData["num_comments"].integer
                     newSub.author = subData["author"].string
-                    newSub.text = subData["selftext"].string
+//                    newSub.text = subData["selftext"].string
+                    newSub.text = subData["selftext_html"].string
                     
                     newSub.thumbnail = "http://a.thumbs.redditmedia.com/ailURefhvi5BnEOZ.png"
                     

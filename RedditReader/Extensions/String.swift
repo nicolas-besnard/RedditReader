@@ -19,3 +19,15 @@ extension String
         return true
     }
 }
+
+extension String
+{
+    func convertHTMLEntities() -> String
+    {
+        let encodedData = self.dataUsingEncoding(NSUTF8StringEncoding)!
+        let attributedOptions = [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType]
+        let attributedString = NSAttributedString(data: encodedData, options: attributedOptions, documentAttributes: nil, error: nil)
+        
+        return attributedString.string
+    }
+}
